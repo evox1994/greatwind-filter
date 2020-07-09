@@ -1,0 +1,213 @@
+.b-filter, .b-filter *, .b-filter *:before, .b-filter *:after {
+	box-sizing: border-box;
+}
+.b-filter-cat ul {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.b-filter-cat ul li {
+	cursor: pointer;
+	padding: 10px 20px;
+	font-size: 16px;
+	border-radius: 100px;
+	background-color: #eeeeee;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	color: #2f2f2f;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.b-filter-cat ul li:last-child {
+	margin-right: 0;
+}
+.b-filter-cat ul li.active {
+	background-color: #afd55b;
+}
+.b-filter-subcats-close {
+	display: none;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+.b-filter-subcats-close:before,
+.b-filter-subcats-close:after {
+	content: '';
+	width: 20px;
+	height: 2px;
+	background-color: #2f2f2f;
+	border-radius: 100px;
+	position: absolute;
+	left: 5px;
+	top: calc(50% - 1px);
+}
+.b-filter-subcats-close:before {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.b-filter-subcats-close:after {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.b-filter-subcats-wrap {
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.b-filter-subcats {
+	display: none;
+	margin-top: 30px;
+	justify-content: space-between;
+	align-items: flex-start;
+	text-align: left;
+	color: #2f2f2f;
+}
+.b-filter-subcats.active {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.b-filter-subcat {
+	width: calc(50% - 25px);
+}
+.b-filter-subcat-title {
+	display: block;
+	font-size: 24px;
+	font-weight: 700;
+}
+.b-filter-subcat ul {
+	margin-top: 15px;
+}
+.b-filter-subcat ul li {
+	position: relative;
+	padding-left: 30px;
+	margin-bottom: 10px;
+	font-size: 16px;
+	cursor: pointer;
+}
+.b-filter-subcat ul li:last-child {
+	margin-bottom: 0;
+}
+.b-filter-subcat ul li:before {
+	content: '';
+	width: 20px;
+	height: 20px;
+	border: 1px solid #cccccc;
+	border-radius: 2px;
+	position: absolute;
+	left: 0;
+	top: calc(50% - 10px);
+}
+.b-filter-subcat ul li.active:after {
+	content: '';
+	width: 16px;
+	height: 16px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url('../i/check-icon.svg');
+	position: absolute;
+	left: 2px;
+	top: calc(50% - 8px);
+}
+.b-filter-btn {
+	display: none;
+	width: 100%;
+	max-width: 260px;
+	margin: 15px auto 0;
+	padding: 15px 10px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 700;
+	color: #ffffff;
+	text-transform: uppercase;
+	border-radius: 100px;
+	background-color: #d14c2d;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.b-filter-subcats-btn {
+	display: none;
+	width: calc(100% - 20px);
+	padding: 15px 10px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 700;
+	color: #ffffff;
+	text-transform: uppercase;
+	border-radius: 100px;
+	background-color: #d14c2d;
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.b-filter-subcats-btn:hover, .b-filter-btn:hover {
+	background-color: #f35b35;
+}
+
+
+@media screen and (max-width: 768px){
+	.b-filter-cat ul {
+		width: 100%;
+		overflow-x: auto;
+		flex-wrap: nowrap;
+	}
+	.b-filter-cat ul li {
+		white-space: nowrap;
+		margin-bottom: 0;
+	}
+	.b-filter-subcats-wrap {
+		width: 100%;
+		position: fixed;
+		left: -200%;
+		top: 0;
+		bottom: 0;
+		z-index: 1000;
+		background-color: #ffffff;
+	}
+	.b-filter-subcats-wrap.active {
+		left: 0;
+	}
+	.b-filter-subcats-close, .b-filter-btn, .b-filter-subcats-btn {
+		display: block;
+	}
+	.b-filter-subcats-content {
+		width: 100%;
+		height: 100%;
+		padding: 35px 10px 80px;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+	.b-filter-subcats {
+		margin-top: 0;
+	}
+	.b-filter-subcats.active {
+		display: block;
+	}
+	.b-filter-subcat {
+		width: 100%;
+		margin-top: 15px;
+	}
+	.b-filter-subcat-title {
+		font-size: 20px;
+	}
+}
