@@ -17,7 +17,7 @@ $(document).ready(function(){
 			$(this).parents('ul').find('li').removeClass('active');
 			$(this).addClass('active');
 			if ( el=='all' ){
-				$(this).parents('.b-filter').find('.b-filter-subcats').addClass('active');
+				$(this).parents('.b-filter').find('.b-filter-subcats').removeClass('active');
 			} else {
 				$(this).parents('.b-filter').find('.b-filter-subcats').removeClass('active');
 				$(el).addClass('active');
