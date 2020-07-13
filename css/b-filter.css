@@ -85,7 +85,7 @@
 }
 .b-filter-subcat-title {
 	display: block;
-	font-size: 24px;
+	font-size: 16px;
 	font-weight: 700;
 }
 .b-filter-subcat ul {
@@ -95,7 +95,7 @@
 	position: relative;
 	padding-left: 30px;
 	margin-bottom: 10px;
-	font-size: 16px;
+	font-size: 14px;
 	cursor: pointer;
 }
 .b-filter-subcat ul li:last-child {
@@ -103,25 +103,28 @@
 }
 .b-filter-subcat ul li:before {
 	content: '';
-	width: 20px;
-	height: 20px;
+	width: 18px;
+	height: 18px;
 	border: 1px solid #cccccc;
 	border-radius: 2px;
 	position: absolute;
 	left: 0;
-	top: calc(50% - 10px);
+	top: calc(50% - 9px);
+}
+.b-filter-subcat ul li.active:before {
+	background-color: #afd55b;
 }
 .b-filter-subcat ul li.active:after {
 	content: '';
-	width: 16px;
-	height: 16px;
+	width: 14px;
+	height: 14px;
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-image: url('../i/check-icon.svg');
 	position: absolute;
 	left: 2px;
-	top: calc(50% - 8px);
+	top: calc(50% - 7px);
 }
 .b-filter-btn {
 	display: none;
@@ -170,6 +173,7 @@
 		width: 100%;
 		overflow-x: auto;
 		flex-wrap: nowrap;
+		padding-bottom: 10px;
 	}
 	.b-filter-cat ul li {
 		white-space: nowrap;
@@ -189,6 +193,9 @@
 	}
 	.b-filter-subcats-close, .b-filter-btn, .b-filter-subcats-btn {
 		display: block;
+	}
+	.b-filter-btn.hidden {
+		display: none;
 	}
 	.b-filter-subcats-content {
 		width: 100%;

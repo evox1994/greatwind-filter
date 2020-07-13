@@ -18,9 +18,11 @@ $(document).ready(function(){
 			$(this).addClass('active');
 			if ( el=='all' ){
 				$(this).parents('.b-filter').find('.b-filter-subcats').removeClass('active');
+				$(this).parents('.b-filter').find('.b-filter-btn').addClass('hidden');
 			} else {
 				$(this).parents('.b-filter').find('.b-filter-subcats').removeClass('active');
 				$(el).addClass('active');
+				$(this).parents('.b-filter').find('.b-filter-btn').removeClass('hidden');
 			}
 		}
 	});
